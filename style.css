@@ -27,6 +27,7 @@
   --shadow-lg: 0 30px 60px -20px rgba(0, 0, 0, 0.28);
 
   --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
   --navbar-h: 90px;
 }
 
@@ -194,6 +195,10 @@ h2 {
 
 .mb-20 {
   margin-bottom: 72px;
+}
+
+.mb-6 {
+  margin-bottom: 24px;
 }
 
 .mb-24 {
@@ -623,10 +628,33 @@ header #home .container-fluid {
     overflow-x: auto;
     flex-wrap: nowrap;
     padding-bottom: 4px;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    scroll-snap-type: x proximity;
+    scrollbar-width: none;
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 20px,
+      #000 calc(100% - 20px),
+      transparent 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      #000 20px,
+      #000 calc(100% - 20px),
+      transparent 100%
+    );
+  }
+
+  #pills-tab::-webkit-scrollbar {
+    display: none;
   }
 
   #pills-tab .nav-item {
     flex: 0 0 auto;
+    scroll-snap-align: start;
   }
 
   #pills-tab p {
